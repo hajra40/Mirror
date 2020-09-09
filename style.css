@@ -1,0 +1,166 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+
+.container h1 {
+  color: #fff;
+}
+
+.square,
+.square-reverse {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to top,rgb(4, 248, 175),rgb(2, 35, 85));
+  transition: all 10s ease;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.square .text,
+.square-reverse .text-reverse {
+  margin: 4rem 2rem;
+  color: rgb(11, 12, 12);
+}
+
+.square {
+  animation: square 10s linear infinite;
+}
+
+
+@keyframes square {
+  0% {
+    transform: rotateY(0) rotateX(0);
+    opacity: 0;
+    box-shadow: -10px 10px 10px rgb(245, 244, 244);
+  }
+  50% {
+    border-radius: 50%;
+    box-shadow: -10px 10px 10px rgb(250, 246, 248);
+
+  }
+  100% {
+    border-radius: 0;
+    transform: rotateY(1000deg) rotateX(-1000deg);
+    opacity: 1;
+    box-shadow: -10px 10px 10px rgb(247, 253, 252);
+
+  }
+}
+
+.square-reverse {
+  animation: squareRev 10s linear infinite;
+}
+
+@keyframes squareRev {
+  0% {
+    transform: rotateY(0) rotateX(0);
+    opacity: 0;
+    box-shadow: 10px 10px 10px rgb(245, 245, 240);
+  }
+  50% {
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px rgb(255, 255, 255);
+  }
+  100% {
+    border-radius: 0;
+    transform: rotateY(-1000deg) rotateX(-1000deg);
+    opacity: 1;
+    box-shadow: 10px 10px 10px rgb(245, 248, 248);
+  }
+}
+
+.line {
+  width: 5px;
+  height: 300px;
+  background: #fff;
+  background: linear-gradient(to top,rgb(255, 238, 0),rgb(197, 42, 3));
+}
+
+/* Media */
+@media(min-width:370px) and (max-width:600px)
+{
+
+  .container
+  {
+    display: flex;
+    flex-direction: column-reverse ;
+    /* justify-self: center; */
+    /* justify-content: space-evenly; */
+  }
+  .line {
+    width: 200px;
+    height: 5px;
+  }
+  .square,
+  .square-reverse {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    /* justify-self: center; */
+    justify-content: space-evenly;
+  }
+}
+
+@media(min-width:300px) and (max-width:370px)
+{
+
+  .container
+  {
+    display: flex;
+    flex-direction: column-reverse ;
+    /* justify-self: center; */
+    /* justify-content: space-evenly; */
+  }
+  .line {
+    width: 200px;
+    height: 5px;
+  }
+  .square,
+  .square-reverse {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    /* justify-self: center; */
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-height: 400px)
+{
+  .square,
+  .square-reverse {
+    height: 100px;
+    width: 100px;
+  }
+
+}
+
+@media(max-width:850px) 
+{
+  .square,
+  .square-reverse {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  }
+
+}
